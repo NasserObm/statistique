@@ -410,7 +410,7 @@ class _Page2State extends State<Page2> {
           _buildStylishNavItem(Icons.copy, 'Search', 1),
           BottomBarItem(
             icon: GestureDetector(
-              onTap: () => {context.go('location')},
+              onTap: () => {context.go('/Page3')},
               child: Container(
                 width: 50,
                 height: 50,
