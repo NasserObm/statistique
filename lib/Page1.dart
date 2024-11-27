@@ -20,12 +20,16 @@ class _Page1State extends State<Page1> {
     "assets/stat3.png"
   ];
 
-  List<String> titres = ["", "Create Invoices Faster and Easier", ""];
+  List<String> titres = [
+    "Use the best actually in the World",
+    "Create Invoices Faster and Easier",
+    "Now you can enter in the futur"
+  ];
 
   List<String> descriptions = [
-    "",
+    "New tools for everybody, anywhere and anytimes just use it and your life will be easy and more cool",
     "simplify billing invoices. Throught an automated payment system, payment will be faster and easier.",
-    ""
+    "Come to show the future about billing invoices, we proud the best  in the world "
   ];
   Widget pagesOne(int i) {
     return Column(

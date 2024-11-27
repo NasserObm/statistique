@@ -36,36 +36,48 @@ Widget createCustomCard({
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: AssetImage(avatarImage),
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            name,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundImage: AssetImage(avatarImage),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              name,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          Text(
-                            email,
-                            style: const TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.normal,
+                            Text(
+                              email,
+                              style: const TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.normal,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  const Icon(
-                    Icons.arrow_forward_ios_sharp,
-                    color: Colors.black,
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: Icon(
+                      Icons.arrow_forward_ios_sharp,
+                      color: Colors.black,
+                    ),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Container(
                 width: 290,
@@ -74,56 +86,63 @@ Widget createCustomCard({
                   borderRadius: BorderRadius.circular(10),
                   color: const Color(0xffF5F9F9),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          amount,
-                          style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 9.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            amount,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Text(
+                            "Amount",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xffCAECCD),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        const Text(
-                          "Amount",
+                        child: const Text(
+                          "Paid",
                           style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.normal,
+                            color: Color(0xff73D173),
                           ),
                         ),
-                      ],
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xffCAECCD),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
                       ),
-                      child: const Text(
-                        "Paid",
-                        style: TextStyle(
-                          color: Color(0xff73D173),
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-              Row(
-                children: [
-                  Text('#$transactionId '),
-                  const Icon(
-                    Icons.circle,
-                    color: Color(0xff878787),
-                    size: 7,
-                  ),
-                  Text(date),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 30, right: 20, top: 30),
+                child: Row(
+                  children: [
+                    Text('#$transactionId '),
+                    const Icon(
+                      Icons.circle,
+                      color: Color(0xff878787),
+                      size: 7,
+                    ),
+                    Text(date),
+                  ],
+                ),
               ),
             ],
           ),
@@ -163,22 +182,22 @@ class _Page2State extends State<Page2> {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
-                Icon(Icons.menu),
+                Icon(Icons.more_horiz),
               ],
             ),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Graphique
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
                     child: Container(
-                      width: 250,
-                      height: 250,
+                      width: 220,
+                      height: 190,
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -251,11 +270,11 @@ class _Page2State extends State<Page2> {
                               lineBarsData: [
                                 LineChartBarData(
                                   spots: [
-                                    const FlSpot(7, 85),
-                                    const FlSpot(8, 100),
-                                    const FlSpot(9, 108),
+                                    const FlSpot(7, 175),
+                                    const FlSpot(8, 165),
+                                    const FlSpot(9, 208),
                                     const FlSpot(10, 200),
-                                    const FlSpot(11, 105.9),
+                                    const FlSpot(11, 190.9),
                                   ],
                                   isCurved: true,
                                   color: Colors.green,
@@ -293,34 +312,68 @@ class _Page2State extends State<Page2> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  width: 10,
+                ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 100,
-                      height: 100,
+                      width: 90,
+                      height: 90,
                       margin: const EdgeInsets.only(bottom: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.deepOrangeAccent,
+                        color: Colors.white,
                       ),
                       child: const Center(
-                        child: Text('hello'),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "12",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Pending",
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Container(
-                      width: 100,
-                      height: 100,
+                      width: 90,
+                      height: 90,
+                      margin: const EdgeInsets.only(bottom: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.deepOrangeAccent,
+                        color: Colors.white,
                       ),
                       child: const Center(
-                        child: Text('hello'),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "05",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Unpaid",
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 )
               ],
+            ),
+            const SizedBox(
+              height: 25,
             ),
             Container(
               width: double.infinity,
@@ -361,6 +414,7 @@ class _Page2State extends State<Page2> {
                 ),
               ),
             ),
+            const SizedBox(height: 25),
             const Row(
               children: [
                 Text(
@@ -368,28 +422,31 @@ class _Page2State extends State<Page2> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
                 ),
                 Spacer(),
-                Icon(Icons.menu),
+                Icon(Icons.more_horiz),
               ],
+            ),
+            const SizedBox(
+              height: 5,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   createCustomCard(
-                    avatarImage: 'assets/avatar.jpg',
+                    avatarImage: 'assets/avatar-1.png',
                     name: 'Mario brozovic',
                     email: 'BrazoM@gmail.com',
                     amount: '€5,200',
-                    transactionId: '0023',
-                    date: '04 December 2021',
+                    transactionId: '0023 ',
+                    date: ' 04 December 2021',
                   ),
                   createCustomCard(
-                    avatarImage: 'assets/avatar2.jpg',
+                    avatarImage: 'assets/avatar-2.png',
                     name: 'Luigi',
                     email: 'luigi@example.com',
                     amount: '€3,150',
-                    transactionId: '0024',
-                    date: '05 December 2021',
+                    transactionId: '0024 ',
+                    date: ' 05 December 2021',
                   ),
                 ],
               ),
@@ -397,46 +454,49 @@ class _Page2State extends State<Page2> {
           ],
         ),
       ),
-      bottomNavigationBar: StylishBottomBar(
-        option: AnimatedBarOptions(
-          barAnimation: BarAnimation.fade,
-          iconStyle: IconStyle.simple,
-          opacity: 0.3,
-        ),
-        backgroundColor: const Color(0xffECF0F1),
-        elevation: 0,
-        items: [
-          _buildStylishNavItem(Icons.home, 'Home', 0),
-          _buildStylishNavItem(Icons.copy, 'Search', 1),
-          BottomBarItem(
-            icon: GestureDetector(
-              onTap: () => {context.go('/Page3')},
-              child: Container(
-                width: 50,
-                height: 50,
-                decoration: const BoxDecoration(
-                  color: Color(0xff07313A),
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.add,
-                  color: Colors.white,
-                  size: 30,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 10, left: 5, right: 5),
+        child: StylishBottomBar(
+          option: AnimatedBarOptions(
+            barAnimation: BarAnimation.fade,
+            iconStyle: IconStyle.simple,
+            opacity: 0.3,
+          ),
+          backgroundColor: const Color(0xffECF0F1),
+          elevation: 0,
+          items: [
+            _buildStylishNavItem(Icons.home, 'Home', 0),
+            _buildStylishNavItem(Icons.copy, 'Search', 1),
+            BottomBarItem(
+              icon: GestureDetector(
+                onTap: () => {context.go('/Page3')},
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: const BoxDecoration(
+                    color: Color(0xff07313A),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    size: 30,
+                  ),
                 ),
               ),
+              title: const Text('Add'),
+              backgroundColor: Colors.orange,
             ),
-            title: const Text('Add'),
-            backgroundColor: Colors.orange,
-          ),
-          _buildStylishNavItem(Icons.graphic_eq, 'Messages', 3),
-          _buildStylishNavItem(Icons.person, 'Settings', 4),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
+            _buildStylishNavItem(Icons.graphic_eq, 'Messages', 3),
+            _buildStylishNavItem(Icons.person, 'Settings', 4),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+        ),
       ),
     );
   }
