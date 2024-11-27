@@ -19,6 +19,9 @@ class _Page3State extends State<Page3> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(
+              height: 35,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -41,6 +44,9 @@ class _Page3State extends State<Page3> {
               "Invoice #0028",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             const SizedBox(height: 20),
             const Text("Recipient",
                 style: TextStyle(fontWeight: FontWeight.bold)),
@@ -55,8 +61,7 @@ class _Page3State extends State<Page3> {
                 children: [
                   CircleAvatar(
                     radius: 20,
-                    backgroundImage: NetworkImage(
-                        "https://via.placeholder.com/150"), // Exemple d'image
+                    backgroundImage: AssetImage("assets/avatar-1.png"),
                   ),
                   SizedBox(width: 12),
                   Expanded(
@@ -75,8 +80,6 @@ class _Page3State extends State<Page3> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // Project Section
             const Text("Project",
                 style: TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
@@ -103,6 +106,9 @@ class _Page3State extends State<Page3> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 20,
+            ),
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
@@ -121,7 +127,7 @@ class _Page3State extends State<Page3> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 35),
                   Row(
                     children: [
                       Expanded(
@@ -149,7 +155,7 @@ class _Page3State extends State<Page3> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      const SizedBox(width: 20),
                       Expanded(
                         child: TextField(
                           decoration: InputDecoration(
@@ -167,8 +173,7 @@ class _Page3State extends State<Page3> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
-
+            const SizedBox(height: 30),
             Row(
               children: [
                 Expanded(
@@ -183,7 +188,7 @@ class _Page3State extends State<Page3> {
                     ),
                   ),
                 ),
-                const SizedBox(width: 12),
+                const SizedBox(width: 30),
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
@@ -199,7 +204,6 @@ class _Page3State extends State<Page3> {
               ],
             ),
             const SizedBox(height: 20),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -216,6 +220,9 @@ class _Page3State extends State<Page3> {
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 30,
                 ),
                 SizedBox(
                   width: 120,
